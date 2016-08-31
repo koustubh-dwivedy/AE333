@@ -26,16 +26,16 @@ if rem(num_panels, 2) == 0
 		x_vals_end(1, i) = x_domain_start + (i)*x_division_length;
 		x_vals_centre(1, i) = (x_vals_start(1, i) + x_vals_end(1, i))/2;
 		y_vals_start(1, i) = shape(x_vals_start(1, i), 1);
-		y_vals_centre(1, i) = shape(x_vals_centre(1, i), 1);
 		y_vals_end(1, i) = shape(x_vals_end(1, i), 1);
+        y_vals_centre(1, i) = (y_vals_start(1, i) + y_vals_end(1, i))/2;
 	end
 	for i = (num_panels/2 + 1):num_panels
 		x_vals_start(1, i) = x_domain_end - (i - num_panels/2 - 1)*x_division_length;
 		x_vals_end(1, i) = x_domain_end - (i - num_panels/2)*x_division_length;
 		x_vals_centre(1, i) = (x_vals_start(1, i) + x_vals_end(1, i))/2;
 		y_vals_start(1, i) = shape(x_vals_start(1, i), -1);
-		y_vals_centre(1, i) = shape(x_vals_centre(1, i), -1);
 		y_vals_end(1, i) = shape(x_vals_end(1, i), -1);
+        y_vals_centre(1, i) = (y_vals_start(1, i) + y_vals_end(1, i))/2;
 	end
 else
 	for i = 1:(ceil(num_panels/2)-1)
@@ -43,8 +43,8 @@ else
 		x_vals_end(1, i) = x_domain_start + (i)*x_division_length;
 		x_vals_centre(1, i) = (x_vals_start(1, i) + x_vals_end(1, i))/2;
 		y_vals_start(1, i) = shape(x_vals_start(1, i), 1);
-		y_vals_centre(1, i) = shape(x_vals_centre(1, i), 1);
 		y_vals_end(1, i) = shape(x_vals_end(1, i), 1);
+        y_vals_centre(1, i) = (y_vals_start(1, i) + y_vals_end(1, i))/2;
 	end
 	
 	for i = ceil(num_panels/2):ceil(num_panels/2)
@@ -52,8 +52,8 @@ else
 		x_vals_end(1, i) = x_vals_start(1, i);
 		x_vals_centre(1, i) = x_vals_start(1, i);
 		y_vals_start(1, i) = shape(x_vals_start(1, i), 1);
-		y_vals_centre(1, i) = shape(x_vals_centre(1, i), 1);
 		y_vals_end(1, i) = shape(x_vals_end(1, i), -1);
+        y_vals_centre(1, i) = (y_vals_start(1, i) + y_vals_end(1, i))/2;
 	end
 
 	for i = (ceil(num_panels/2)+1):num_panels
@@ -61,8 +61,8 @@ else
 		x_vals_end(1, i) = x_domain_start + x_division_length*(num_panels-1)/2 - (i - ceil(num_panels/2))*x_division_length;
 		x_vals_centre(1, i) = (x_vals_start(1, i) + x_vals_end(1, i))/2;
 		y_vals_start(1, i) = shape(x_vals_start(1, i), -1);
-		y_vals_centre(1, i) = shape(x_vals_centre(1, i), -1);
 		y_vals_end(1, i) = shape(x_vals_end(1, i), -1);
+        y_vals_centre(1, i) = (y_vals_start(1, i) + y_vals_end(1, i))/2;
 	end
 end
 
