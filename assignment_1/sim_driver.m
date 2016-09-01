@@ -10,7 +10,7 @@ num_panels = 38;
 
 beta_i = panel_normals(x_vals_start, y_vals_start, x_vals_centre, y_vals_centre, x_vals_end, y_vals_end);
 
-plot(x_vals_centre, y_vals_centre);
+plot([x_vals_start, x_vals_start(1, 1)], [y_vals_start, y_vals_start(1, 1)]);
 axis equal;
 
 I_mat = I_matrix(num_panels, x_vals_start, y_vals_start, x_vals_centre, y_vals_centre, x_vals_end, y_vals_end);
