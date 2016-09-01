@@ -16,3 +16,5 @@ axis equal;
 I_mat = I_matrix(num_panels, x_vals_start, y_vals_start, x_vals_centre, y_vals_centre, x_vals_end, y_vals_end);
 
 lambda = solver(v_inf, beta_i, I_mat);
+%for checking accuracy of solution->
+sum(lambda.*(sqrt((x_vals_end' - x_vals_start').*(x_vals_end' - x_vals_start') + (y_vals_end' - y_vals_start').*(y_vals_end' - y_vals_start'))))
