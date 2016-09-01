@@ -12,8 +12,8 @@ for i = 1:num_panels
 			y_j = y_vals_start(j);
 			y_j_1 = y_vals_end(j);
 			
-			fi_i = atan((y_vals_end(i) - y_vals_start(i))/(x_vals_end(i) - x_vals_start(i)));
-			fi_j = atan((y_vals_end(j) - y_vals_start(j))/(x_vals_end(j) - x_vals_start(j)));
+			fi_i = atan2((y_vals_end(i) - y_vals_start(i)), (x_vals_end(i) - x_vals_start(i)));
+			fi_j = atan2((y_vals_end(j) - y_vals_start(j)), (x_vals_end(j) - x_vals_start(j)));
 
 			A_val = A(x_i, x_j, y_i, y_j, fi_j);
 			B_val = B(x_i, x_j, y_i, y_j);
