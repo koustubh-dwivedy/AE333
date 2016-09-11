@@ -18,3 +18,9 @@ I_mat = I_matrix(num_panels, x_vals_start, y_vals_start, x_vals_centre, y_vals_c
 lambda = solver(v_inf, beta_i, I_mat);
 %for checking accuracy of solution->
 sum(lambda.*(sqrt((x_vals_end' - x_vals_start').*(x_vals_end' - x_vals_start') + (y_vals_end' - y_vals_start').*(y_vals_end' - y_vals_start'))))
+
+I_mat_new = I_matrix_new(num_panels, x_vals_start, y_vals_start, x_vals_centre, y_vals_centre, x_vals_end, y_vals_end);
+c_p_i = pressure_coeff(lambda, I_mat_new, v_inf, beta_i);
+
+[y_dummy, domain_start, domain_end] = shape(0, 1);
+[c_l, c_d] = lift_drag_coeff(beta_i, c_p_i, (domain_end - domain_start), x_vals_start, y_vals_start, x_vals_end, y_vals_end);
