@@ -1,0 +1,4 @@
+errors with 5000 panels, 0 aoa, 15 vinf: 0.0159
+errors with 38 panels, 0 aoa, 15 vinf: 0.8729
+errors with 38 panels, 30 aoa, 15 vinf: 0.7560
+errors with 38 panels, -30 aoa, 15 vinf: 0.7560
