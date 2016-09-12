@@ -1,10 +1,11 @@
 c_l = zeros(50, 1);
 c_d = zeros(50, 1);
-for t = 1:50
-    angle_of_attack = -30;
+for t = 0:49
+    angle_of_attack = 0;
     v_inf = 15*abs(cos(t*4*pi/50)); % 2 Time Periods
-    num_panels = 38;
+    num_panels = 380;
 
+    angle_of_attack = angle_of_attack + 90;
     [x_vals_start, y_vals_start, x_vals_centre, y_vals_centre, x_vals_end, y_vals_end] = panels(num_panels);
 
     [x_vals_start, y_vals_start] = rotation(x_vals_start, y_vals_start, angle_of_attack);
@@ -26,8 +27,8 @@ for t = 1:50
     c_p_i = pressure_coeff(lambda, I_mat_new, v_inf, beta_i);
 
     [y_dummy, domain_start, domain_end] = shape(0, 1);
-    [c_l(t), c_d(t)] = lift_drag_coeff(beta_i, c_p_i, (domain_end - domain_start), x_vals_start, y_vals_start, x_vals_end, y_vals_end);
-    % plot([x_vals_centre'; x_vals_centre(1)], [c_p_i', c_p_i(1)]);
+    [c_l(t+1), c_d(t+1)] = lift_drag_coeff(beta_i, c_p_i, (domain_end - domain_start), x_vals_start, y_vals_start, x_vals_end, y_vals_end);
+    plot([x_vals_centre'; x_vals_centre(1)], [c_p_i', c_p_i(1)]);
 end
 plot([1:50], c_l);
-plot([1:50], c_d);
+% plot([1:50], c_d);

@@ -6,7 +6,7 @@ function [c_l, c_d] = lift_drag_coeff(beta_i, c_p_i, b, x_vals_start, y_vals_sta
 		c_l = c_l + c_p_i(i)*sin(beta_i(i))*(sqrt((x_vals_start(i) - x_vals_end(i))*(x_vals_start(i) - x_vals_end(i)) + (y_vals_start(i) - y_vals_end(i))*(y_vals_start(i) - y_vals_end(i))));
 		c_d = c_d + c_p_i(i)*cos(beta_i(i))*(sqrt((x_vals_start(i) - x_vals_end(i))*(x_vals_start(i) - x_vals_end(i)) + (y_vals_start(i) - y_vals_end(i))*(y_vals_start(i) - y_vals_end(i))));
 	end
-	c_l = -c_l/b;
-	c_d = -c_d/b;
+	c_l = +c_l/b;
+	c_d = +c_d/b;
 
 end
