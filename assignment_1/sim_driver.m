@@ -1,6 +1,6 @@
 c_l = zeros(50, 1);
 c_d = zeros(50, 1);
-for t = 0:49
+for t = 0:0
     angle_of_attack = 0;
     v_inf = 15*abs(cos(t*4*pi/50)); % 2 Time Periods
     num_panels = 38;
